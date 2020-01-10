@@ -10,5 +10,6 @@ public class BasicRuntimeException extends RuntimeException {
 
 
     public BasicRuntimeException(String 错误) {
+	aaaaa
     }
 }
