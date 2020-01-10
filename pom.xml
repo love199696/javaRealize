@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.hxb</groupId>
+    <artifactId>javaRealize</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <properties>
+        <elasticsearch>5.0.0</elasticsearch>
+        <springdata.elasticsearch>2.1.4.RELEASE</springdata.elasticsearch>
+        <mongo.java.driver>3.4.1</mongo.java.driver>
+        <apache.logging.log4j>2.6.2</apache.logging.log4j>
+        <druid_version>1.1.9</druid_version>
+
+        <fjhb.shell>1.0.0</fjhb.shell>
+        <fjhb.commons>2.0.0</fjhb.commons>
+        <fjhb.context>1.2.3</fjhb.context>
+        <fjhb.mybatis>2.4.0</fjhb.mybatis>
+        <fjhb.job>2.3.3</fjhb.job>
+        <fjhb.cauth>1.11.15-SNAPSHOT</fjhb.cauth>
+
+        <fjhb.security>1.5.0-SNAPSHOT</fjhb.security>
+        <fjhb.mq.framework>1.12.0</fjhb.mq.framework>
+        <fjhb.data.router.client>2.0.2</fjhb.data.router.client>
+        <fjhb.quartz>1.3.0</fjhb.quartz>
+        <fjhb.resource.bag>1.0.0</fjhb.resource.bag>
+
+        <fjhb6.ability.basicdata>1.22.24-SNAPSHOT</fjhb6.ability.basicdata>
+        <fjhb6.ability.message>1.5.3</fjhb6.ability.message>
+        <!--实际上是 message v2版本 主要是站内信使用-->
+        <fjhb6.ability.stationlatter>2.0.0</fjhb6.ability.stationlatter>
+
+        <fjhb6.ability.exam>1.28.2</fjhb6.ability.exam>
+        <fjhb6.ability.commodity>1.18.1</fjhb6.ability.commodity>
+        <fjhb6.ability.order>1.34.0</fjhb6.ability.order>
+        <fjhb6.ability.payment>1.17.0</fjhb6.ability.payment>
+        <fjhb6.ability.bill>1.7.4</fjhb6.ability.bill>
+        <fjhb6.ability.storage>1.18.0</fjhb6.ability.storage>
+        <fjhb6.ability.delivery>1.7.1</fjhb6.ability.delivery>
+        <fjhb6.ability.certificate>1.0.5</fjhb6.ability.certificate>
+        <fjhb.anticheat>1.0.0</fjhb.anticheat>
+
+        <fjhb6.ability.course>2.38.0-SNAPSHOT</fjhb6.ability.course>
+        <fjhb6.ability.study>2.9.0-SNAPSHOT</fjhb6.ability.study>
+
+        <fjhb6.ability.learningscheme>1.12.4-SNAPSHOT</fjhb6.ability.learningscheme>
+        <fjhb.anticheat>1.0.0</fjhb.anticheat>
+        <fjhb6.ability.contents>1.0.2</fjhb6.ability.contents>
+        <fjhb6.ability.sensitiveword>1.0.0</fjhb6.ability.sensitiveword>
+        <fjhb6.ability.commentary>1.2.0</fjhb6.ability.commentary>
+        <fjhb6.ability.resource>2.1.0</fjhb6.ability.resource>
+    </properties>
+
+
+    <dependencies>
+        <!-- POI -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.13</version>
+        </dependency>
+        <!-- POI -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.13</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.47</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.6</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.18.1-GA</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>jaxen</groupId>
+            <artifactId>jaxen</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.41</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/backport-util-concurrent/backport-util-concurrent -->
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>backport-util-concurrent</groupId>
+            <artifactId>backport-util-concurrent</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ws.commons.schema</groupId>
+            <artifactId>XmlSchema</artifactId>
+            <version>1.4.5</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>wsdl4j</groupId>
+            <artifactId>wsdl4j</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ws.commons.axiom</groupId>
+            <artifactId>axiom</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2</artifactId>
+            <version>1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpmime</artifactId>
+            <version>4.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>1.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-basicdata-dictionary-south-api</artifactId>
+            <version>${fjhb6.ability.basicdata}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-basicdata-dictionary-north-api</artifactId>
+            <version>${fjhb6.ability.basicdata}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-exam-south-api</artifactId>
+            <version>${fjhb6.ability.exam}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-exam-north-api</artifactId>
+            <version>${fjhb6.ability.exam}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb-job-client</artifactId>
+            <version>${fjhb.job}</version>
+        </dependency>
+        <!-- 6.0CAuth单点登录 -->
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb-security-cauth</artifactId>
+            <version>${fjhb.security}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>xerces</groupId>
+                    <artifactId>xercesImpl</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--关键字服务-->
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-sensitiveword-client</artifactId>
+            <version>${fjhb6.ability.sensitiveword}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-sensitiveword-manage-api</artifactId>
+            <version>${fjhb6.ability.sensitiveword}</version>
+        </dependency>
+        <!-- 内容服务 -->
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-contents-south-api</artifactId>
+            <version>${fjhb6.ability.contents}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-contents-north-api</artifactId>
+            <version>${fjhb6.ability.contents}</version>
+        </dependency>
+        <!-- 6.0证书服务 -->
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-certificate-south-api</artifactId>
+            <version>${fjhb6.ability.certificate}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-certificate-north-api</artifactId>
+            <version>${fjhb6.ability.certificate}</version>
+        </dependency>
+        <!-- 6.0课程模块 -->
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-course-north-api</artifactId>
+            <version>${fjhb6.ability.course}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-course-south-api</artifactId>
+            <version>${fjhb6.ability.course}</version>
+        </dependency>
+        <!-- 6.0学习服务 -->
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-study-north-api</artifactId>
+            <version>${fjhb6.ability.study}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-study-south-api</artifactId>
+            <version>${fjhb6.ability.study}</version>
+        </dependency>
+        <!-- 商品服务 -->
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-commodity-north-api</artifactId>
+            <version>${fjhb6.ability.commodity}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-commodity-south-api</artifactId>
+            <version>${fjhb6.ability.commodity}</version>
+        </dependency>
+        <!-- 订单服务 -->
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-order-north-api</artifactId>
+            <version>${fjhb6.ability.order}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-order-south-api</artifactId>
+            <version>${fjhb6.ability.order}</version>
+        </dependency>
+        <!-- 6.0支付服务 -->
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-order-pay-north-api</artifactId>
+            <version>${fjhb6.ability.payment}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-order-pay-south-api</artifactId>
+            <version>${fjhb6.ability.payment}</version>
+        </dependency>
+        <!-- 6.0发票服务 -->
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-bill-south-api</artifactId>
+            <version>${fjhb6.ability.bill}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-ability-bill-north-api</artifactId>
+            <version>${fjhb6.ability.bill}</version>
+        </dependency>
+        <!-- 6.0防替学服务 -->
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb-ability-anticheat-south-api</artifactId>
+            <version>${fjhb.anticheat}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb-ability-anticheat-north-api</artifactId>
+            <version>${fjhb.anticheat}</version>
+        </dependency>
+
+        <!-- 6.字典服务 -->
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-basicdata-dictionary-south-api</artifactId>
+            <version>${fjhb6.ability.basicdata}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-basicdata-dictionary-north-api</artifactId>
+            <version>${fjhb6.ability.basicdata}</version>
+        </dependency>
+        <!-- 系统管理 -->
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-basicdata-systemmanage-north-api</artifactId>
+            <version>${fjhb6.ability.basicdata}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-basicdata-systemmanage-south-api</artifactId>
+            <version>${fjhb6.ability.basicdata}</version>
+        </dependency>
+        <!-- 6.0单位信息、组织结构 -->
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-baiscdata-unit-north-api</artifactId>
+            <version>${fjhb6.ability.basicdata}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-basicdata-unit-south-api</artifactId>
+            <version>${fjhb6.ability.basicdata}</version>
+        </dependency>
+        <!-- 6.0人员角色模块 -->
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-basicdata-userdata-north-api</artifactId>
+            <version>${fjhb6.ability.basicdata}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-basicdata-userdata-south-api</artifactId>
+            <version>${fjhb6.ability.basicdata}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-basicdata-authorize-south-api</artifactId>
+            <version>${fjhb6.ability.basicdata}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fjhb</groupId>
+            <artifactId>fjhb6-basicdata-authorize-north-api</artifactId>
+            <version>${fjhb6.ability.basicdata}</version>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
